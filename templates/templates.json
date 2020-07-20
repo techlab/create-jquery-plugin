@@ -1,0 +1,12 @@
+{
+  "templates": [
+    {
+      "name": "JavaScript with CSS",
+      "folder": "javascript_css"
+    },
+    {
+      "name": "JavaScript with Sass",
+      "folder": "javascript_sass"
+    }
+  ]
+}
