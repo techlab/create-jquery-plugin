@@ -1,6 +1,6 @@
 {
   "name": "create-jquery-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI for creating ready-to-start modern jQuery Plugins",
   "main": "index.js",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava test/* -v"
   },
   "repository": {
     "type": "git",
@@ -52,5 +52,8 @@
     "parse-git-config": "^3.0.0",
     "validate-npm-package-name": "^3.0.0",
     "which": "^2.0.2"
+  },
+  "devDependencies": {
+    "ava": "^3.10.1"
   }
 }

@@ -13,7 +13,6 @@ var gulp          = require('gulp'),
 
 var Server        = require('karma').Server;
 var browserSync   = require('browser-sync').create();
-var reload        = browserSync.reload;
 
 // Specify the Source files
 var SRC_JS        = 'src/js/*.js';
@@ -22,6 +21,9 @@ var SRC_CSS       = 'src/css/*.css';
 // Specify the Destination folders
 var DEST_JS       = 'dist/js';
 var DEST_CSS      = 'dist/css';
+
+// Example pages
+var EXAMPLE_HTML  = 'examples/*.html';
 
 // BUILD JS
 function build_js(cb) {
@@ -96,8 +98,10 @@ function serve(cb) {
       }
   });
 
-  gulp.watch(SRC_JS, build_js).on("change", reload);
-  gulp.watch(SRC_CSS, build_css).on("change", reload);
+  gulp.watch(SRC_JS, build_js);
+  gulp.watch(SRC_CSS, build_css);
+
+  gulp.watch([DEST_JS, DEST_CSS, EXAMPLE_HTML]).on("change", browserSync.reload);
 
   cb();
 }

@@ -1,6 +1,6 @@
 # create-jquery-plugin
 #### CLI for creating ready-to-start modern jQuery Plugins
-###### Inspired from [create-react-library](https://www.npmjs.com/package/create-react-library) and [create-react-app](https://github.com/facebook/create-react-app)
+##### Inspired from [create-react-library](https://www.npmjs.com/package/create-react-library) and [create-react-app](https://github.com/facebook/create-react-app)
 
 
 [![Build Status](https://travis-ci.org/techlab/create-jquery-plugin.svg?branch=master)](https://travis-ci.org/techlab/create-jquery-plugin)
@@ -12,7 +12,7 @@
 
 
 **create-jquery-plugin** is a CLI tool for creating a ready-to-start jQuery plugin development environment with modern configurations.
-It will create a development environment with a pre-configured build system. So you can get started immediately with your plugin development.
+It will create a development environment with a pre-configured build system and you can get started immediately with your plugin development.
 Also, it is easily customizable that allows you to add or remove any tools or setup.
 The development setup will include the boilerplate project for the jQuery plugin development, pre-configured gulp tasks for JavaScript transpile,
 CSS/SCSS building, test/lint scripts, hot loading, example page, readme, etc.
@@ -24,7 +24,7 @@ CSS/SCSS building, test/lint scripts, hot loading, example page, readme, etc.
 Usage
 -----
 
-The command will walk you through a few simple prompts and creates a ready to start local development setup for your new jQuery plugin.
+The command will walk you through a few simple prompts and creates a ready-to-start local development setup for your new jQuery plugin.
 
 ```bash
 npx create-jquery-plugin
@@ -35,7 +35,7 @@ Or, fast track with default settings, just pass your plugin name.
 npx create-jquery-plugin jquery-my-plugin
 ```
 
-It will create a directory with the name of your package with all the tools installed.
+This will create a directory with the your plugin name and with all the tools installed.
 
 
 How to start the development
