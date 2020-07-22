@@ -22,7 +22,7 @@ var SRC_SCSS      = 'src/scss/*.scss';
 
 // Specify the Destination folders
 var DEST_JS       = 'dist/js';
-var DEST_SCSS     = 'dist/css';
+var DEST_CSS     = 'dist/css';
 
 // Example pages
 var EXAMPLE_HTML  = 'examples/*.html';
@@ -53,10 +53,10 @@ function build_scss(cb) {
         .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
         .pipe(postcss( [autoprefixer()] ))
         .pipe(cssbeautify({ autosemicolon: true }))
-        .pipe(gulp.dest(DEST_SCSS))
+        .pipe(gulp.dest(DEST_CSS))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(DEST_SCSS));
+        .pipe(gulp.dest(DEST_CSS));
 
   cb();
 }
@@ -77,8 +77,8 @@ function clean_js(cb) {
   cb();
 }
 
-function clean_scss(cb) {
-  del.sync([DEST_SCSS]);
+function clean_css(cb) {
+  del.sync([DEST_CSS]);
 
   cb();
 }
@@ -120,8 +120,8 @@ function test(cb) {
 }
 
 // EXPORT methods
-exports.clean   = gulp.parallel(clean_js, clean_scss);
-exports.build   = gulp.parallel(gulp.series(clean_js, lint_js, build_js), gulp.series(clean_scss, build_scss));
+exports.clean   = gulp.parallel(clean_js, clean_css);
+exports.build   = gulp.parallel(gulp.series(clean_js, lint_js, build_js), gulp.series(clean_css, build_scss));
 exports.lint    = lint_js;
 exports.watch   = watch;
 exports.test    = test;

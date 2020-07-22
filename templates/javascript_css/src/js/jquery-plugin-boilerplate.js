@@ -57,7 +57,7 @@
      // Initial Method
      _init() {
         // Plugin init and logic
-        this.main.addClass(this.options.myStyle);
+        this.main.addClass(this.options.myStyle).html(this.options.myStyle);
      }
 
      // TODO: YOU CAN ADD MORE FUNCTIONS FOR YOUR PLUGIN HERE
