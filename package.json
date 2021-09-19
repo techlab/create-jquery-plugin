@@ -1,6 +1,6 @@
 {
   "name": "create-jquery-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI for creating ready-to-start modern jQuery Plugins",
   "main": "index.js",
   "bin": {

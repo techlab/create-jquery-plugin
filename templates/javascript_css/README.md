@@ -71,4 +71,4 @@ License
 {{license}}
 
 
-Created with :green_heart: [create-jquery-plugin](https://www.npmjs.com/package/create-jquery-plugin)
+Created with :heart: [create-jquery-plugin](https://www.npmjs.com/package/create-jquery-plugin)

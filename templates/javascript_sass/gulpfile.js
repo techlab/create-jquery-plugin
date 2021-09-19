@@ -9,10 +9,9 @@ var gulp          = require('gulp'),
     cleanCSS      = require('gulp-clean-css'),
     cssbeautify   = require('gulp-cssbeautify'),
     autoprefixer  = require('autoprefixer'),
-    sass          = require('gulp-sass'),
+    sass          = require('gulp-dart-sass'),
     del           = require('del');
 
-sass.compiler     = require('node-sass');
 var Server        = require('karma').Server;
 var browserSync   = require('browser-sync').create();
 
@@ -22,7 +21,7 @@ var SRC_SCSS      = 'src/scss/*.scss';
 
 // Specify the Destination folders
 var DEST_JS       = 'dist/js';
-var DEST_CSS     = 'dist/css';
+var DEST_SCSS     = 'dist/css';
 
 // Example pages
 var EXAMPLE_HTML  = 'examples/*.html';
@@ -53,10 +52,10 @@ function build_scss(cb) {
         .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
         .pipe(postcss( [autoprefixer()] ))
         .pipe(cssbeautify({ autosemicolon: true }))
-        .pipe(gulp.dest(DEST_CSS))
+        .pipe(gulp.dest(DEST_SCSS))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(DEST_CSS));
+        .pipe(gulp.dest(DEST_SCSS));
 
   cb();
 }
@@ -78,7 +77,7 @@ function clean_js(cb) {
 }
 
 function clean_css(cb) {
-  del.sync([DEST_CSS]);
+  del.sync([DEST_SCSS]);
 
   cb();
 }
@@ -104,7 +103,7 @@ function serve(cb) {
   gulp.watch(SRC_JS, build_js);
   gulp.watch(SRC_SCSS, build_scss);
 
-  gulp.watch([DEST_JS, DEST_CSS, EXAMPLE_HTML]).on("change", browserSync.reload);
+  gulp.watch([DEST_JS, DEST_SCSS, EXAMPLE_HTML]).on("change", browserSync.reload);
 
   cb();
 }
